@@ -8,19 +8,14 @@
 </form>
 
 <?php
-$passwordElements = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
-$n = 0;
-$n = $_GET['lunghezza'];
+include __DIR__ . '/functions.php';
+
+$lunghezza = 0;
+$lunghezza = $_GET['lunghezza'];
 
 //echo $n . "<br>";
 
-$password = array();
-
-for ($i = 0; $i < $n; $i++) {
-    array_push($password, $passwordElements[rand(0, strlen($passwordElements) - 1)]);
-}
-
-echo implode("", $password);
+echo generaPassword($lunghezza);
 
 ?>
